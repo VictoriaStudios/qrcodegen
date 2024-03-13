@@ -43,12 +43,12 @@ const UUIDGenerator: React.FC<UUIDGeneratorProps> = () => {
     <div className="uuid-generator-container">
       <div className="settings-container">
         <button onClick={toggleSettings} className="settings-toggle-btn">
-          Toggle Settings
+          Mostrar/ocultar configuración
         </button>
         {showSettings && (
           <div className="settings-panel">
             <label>
-              Number of UUIDs to generate:
+              Cantidad de UUIDs:
               <input
                 type="number"
                 min="1"
@@ -57,7 +57,7 @@ const UUIDGenerator: React.FC<UUIDGeneratorProps> = () => {
               />
             </label>
             <label>
-              QR Code size:
+              Tamaño de QR code:
               <input
                 type="number"
                 min="1"
@@ -65,7 +65,7 @@ const UUIDGenerator: React.FC<UUIDGeneratorProps> = () => {
                 onChange={(e) => setQRCodeSize(parseInt(e.target.value, 10))}
               />
             </label>
-            <button onClick={handleGenerateUUIDs}>Generate UUIDs</button>
+            <button onClick={handleGenerateUUIDs}>Generar</button>
           </div>
         )}
       </div>
