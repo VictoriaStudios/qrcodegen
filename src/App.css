@@ -1,1 +1,48 @@
-#root {}
+.uuid-generator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settings-toggle-btn {
+  margin-bottom: 10px;
+}
+
+.settings-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.uuid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.uuid-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.uuid-code {
+  margin-bottom: 10px;
+}
+
+.qr-code-img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 5px;
+}
