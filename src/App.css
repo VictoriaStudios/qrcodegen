@@ -1,6 +1,4 @@
 .uuid-generator-container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   margin: 20px;
 }
@@ -24,7 +22,6 @@
 
 .uuid-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -32,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #ddd;
+  border: 1px solid black;
   padding: 10px;
   border-radius: 8px;
 }

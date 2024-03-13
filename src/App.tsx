@@ -70,7 +70,13 @@ const UUIDGenerator: React.FC<UUIDGeneratorProps> = () => {
         )}
       </div>
 
-      <div className="uuid-list">
+      <div
+        className="uuid-list"
+        // style={{ gridTemplateColumns: `repeat(${generatedUuids.length}, 1fr)` }}
+        style={{
+          gridTemplateColumns: `repeat(auto-fit, minmax(${qrCodeSize}px, 1fr))`,
+        }}
+      >
         {generatedUuids.length > 0 &&
           generatedUuids.map((uuid, index) => (
             <div key={uuid} className="uuid-cell">
