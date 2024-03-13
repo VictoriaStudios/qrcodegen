@@ -6,13 +6,14 @@ const UUIDGenerator = () => {
   const [uuidCount, setUuidCount] = useState<number>(1);
   const [generatedUuids, setGeneratedUuids] = useState<string[]>([]);
   const [qrCodes, setQRCodes] = useState<string[]>([]);
+  const [size, setSize] = useState<number>(300);
 
   useEffect(() => {
     const generateQRCodes = async () => {
       const codes = await Promise.all(
         generatedUuids.map(async (uuid) => {
           try {
-            return await QRCode.toDataURL(uuid, { width: 300 });
+            return await QRCode.toDataURL(uuid, { width: size });
           } catch (err) {
             console.error("Error generating QR code:", err);
             return "";
@@ -34,7 +35,7 @@ const UUIDGenerator = () => {
     <div>
       <h1>UUID Generator</h1>
       <label>
-        Number of UUIDs to generate:
+        Cuantos codigos UUID quieres generar:
         <input
           type="number"
           min="1"
@@ -42,7 +43,17 @@ const UUIDGenerator = () => {
           onChange={(e) => setUuidCount(parseInt(e.target.value, 10))}
         />
       </label>
-      <button onClick={handleGenerateUUIDs}>Generate UUIDs</button>
+      <label>
+        <h1>Tamaño del QR</h1>
+
+        <input
+          type="number"
+          min="30"
+          value={size}
+          onChange={(e) => setSize(parseInt(e.target.value, 10))}
+        />
+      </label>
+      <button onClick={handleGenerateUUIDs}>Generar Uuids</button>
 
       {generatedUuids.length > 0 && (
         <div>
