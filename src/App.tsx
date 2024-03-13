@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import QRCode from "qrcode";
 
-interface UUIDGeneratorProps {}
-
-const UUIDGenerator: React.FC<UUIDGeneratorProps> = () => {
+const UUIDGenerator = () => {
   const [uuidCount, setUuidCount] = useState<number>(1);
   const [generatedUuids, setGeneratedUuids] = useState<string[]>([]);
   const [qrCodes, setQRCodes] = useState<string[]>([]);
