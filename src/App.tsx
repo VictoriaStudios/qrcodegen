@@ -80,7 +80,7 @@ const UUIDGenerator: React.FC<UUIDGeneratorProps> = () => {
         {generatedUuids.length > 0 &&
           generatedUuids.map((uuid, index) => (
             <div key={uuid} className="uuid-cell">
-              <div className="uuid-code">{uuid}</div>
+              {/*} <div className="uuid-code">{uuid}</div> */}
               {qrCodes[index] && (
                 <img
                   src={qrCodes[index]}
